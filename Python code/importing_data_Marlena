@@ -1,0 +1,24 @@
+## import data
+import zipfile
+import pandas as pd
+
+path = 'C:/Users/48668/Downloads/'
+zf = zipfile.ZipFile(path + 'amazon-reviews-unlocked-mobile-phones.zip')
+df = pd.read_csv(zf.open('Amazon_Unlocked_Mobile.csv'))
+print("File opened")
+
+print(df.head())
+
+# column names
+for col in df.columns:
+    print(col)
+
+# counting reviews per brand
+count = df['Brand Name'].value_counts()
+print(count)
+
+
+
+
+
+
